@@ -1,8 +1,9 @@
 #include <iostream>
 #include <iomanip>
+#include <array>
 
 using namespace std;
-const int SIZE = 3;
+const int SIZE = 3, MAX_PRICE = 99999, MIN_PRICE = 10000;
 
 class Chair {
 private:
@@ -14,13 +15,13 @@ public:
         prices = new double[SIZE];
         legs = rand() % 4 + 1; // random legs between 1 and 4
         for (int i = 0; i < SIZE; i++)
-            prices[i] = rand() % 900 + 100; //
+            prices[i] = (rand() % (MAX_PRICE - MIN_PRICE + 1)) + MIN_PRICE / 100;
     }
-    Chair(int l) {
+    Chair(int l, array<double, SIZE> p) {
         prices = new double[SIZE];
         legs = l;
         for (int i = 0; i < SIZE; i++)
-            prices[i] = rand() % 900 + 100;
+            prices[i] = p[i];
     }
 
     // setters and getters
