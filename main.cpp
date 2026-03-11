@@ -12,15 +12,15 @@ public:
     // constructors
     Chair() {
         prices = new double[SIZE];
-        legs = 0;
+        legs = rand() % 4 + 1; // random legs between 1 and 4
         for (int i = 0; i < SIZE; i++)
-            prices[i] = 0;
+            prices[i] = rand() % 900 + 100; //
     }
     Chair(int l) {
         prices = new double[SIZE];
         legs = l;
         for (int i = 0; i < SIZE; i++)
-            prices[i] = 0;
+            prices[i] = rand() % 900 + 100;
     }
 
     // setters and getters
